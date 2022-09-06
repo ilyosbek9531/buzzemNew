@@ -9,9 +9,6 @@ const nextTranslate = require('next-translate')
 
 const nextConfig = nextTranslate({
   reactStrictMode: true,
-  devIndicators: {
-    buildActivity: false
-  },
   images: {
     domains: ['test.cdn.rasta.app'],
   },

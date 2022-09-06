@@ -1,5 +1,5 @@
 import { Container } from '@mui/material'
-import SEO from 'seo'
+import SEO from 'components/SEO'
 
 export default function Blog() {
   return (
@@ -15,5 +15,3 @@ export default function Blog() {
     </>
   )
 }
-
-Blog.layout = "MainLayout"

@@ -1,5 +1,5 @@
 import { BlogList } from 'components/UI/Blog/Blog'
-import SEO from 'seo'
+import SEO from 'components/SEO'
 
 export default function Blog() {
   return (
@@ -9,5 +9,3 @@ export default function Blog() {
     </>
   )
 }
-
-Blog.layout = "MainLayout"

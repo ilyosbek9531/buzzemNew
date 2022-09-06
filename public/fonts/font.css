@@ -1,6 +1,7 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('./Inter/Inter-VariableFont_slnt,wght.ttf');
+  font-family: 'SF Pro Display';
+  src: url('Sf_Pro_Display_Cufon/SFPRODISPLAYREGULAR.OTF') format('truetype');
+  font-weight: 400;
   font-style: normal;
 }
 

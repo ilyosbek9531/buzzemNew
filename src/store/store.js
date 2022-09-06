@@ -11,22 +11,16 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import {appointmentReducer} from "./appointment/appointment.slice";
-import { authReducer } from './auth/auth.slice';
+import counterSlice from './counter/counterSlice'
 
 const persistConfig = {
-  key: 'appointment',
+  key: 'root',
+  version: 1,
   storage,
 }
 
-const authPersistConfig = {
-  key: 'auth',
-  storage
-}
-
 const rootReducer = combineReducers({
-  appointment: persistReducer(persistConfig, appointmentReducer),
-  auth: persistReducer(authPersistConfig, authReducer)
+  counter: persistReducer(persistConfig, counterSlice),
 })
 
 export const store = configureStore({

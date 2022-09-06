@@ -10,11 +10,7 @@ export function Main() {
   const { t } = useTranslation('common')
   const [posts, setPosts] = useState([])
 
-  useEffect(() => {
-    getPosts({ limit: 10, page: 1 }).then((res) => {
-      setPosts(res)
-    })
-  }, [])
+ 
 
   const addPost = () => {
     createPost(

@@ -1,5 +1,7 @@
 // services format should be in the same structure
 
+import { request } from './http-client'
+
 export const getPosts = (params) =>
   request.get('/posts', { params }).then((res) => res.data)
 

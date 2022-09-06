@@ -1,14 +1,3 @@
-import {PageNotFound} from "../components/UI/PageNotFound404/404";
-import SEO from 'seo'
-
 export default function Custom404() {
-  return (
-      <>
-        <SEO />
-        <PageNotFound/>
-      </>
-  )
+  return <h1>404 - Page Not Found</h1>
 }
-
-
-Custom404.layout = "MainLayout"

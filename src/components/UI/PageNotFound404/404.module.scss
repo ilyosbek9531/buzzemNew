@@ -1,0 +1,33 @@
+.mainContainer{
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  p{
+    //styleName: Headings/H4;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #66686C;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  a{
+    border-radius: 8px;
+    color: #fff;
+    background-color: #C32C31;
+    padding: 15px 16px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    transition: 200ms ease-out;
+    &:hover{
+      background-color: #B5272B;
+    }
+  }
+}

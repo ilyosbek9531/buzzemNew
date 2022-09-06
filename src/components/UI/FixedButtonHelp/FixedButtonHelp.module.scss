@@ -1,0 +1,137 @@
+.FixedButtonHelp{
+  padding: 12px 20px;
+  background-color: #C32C31;
+  color: #fff;
+  border: 0;
+  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  z-index: 5465465466;
+}
+
+.FixedButtonHelpers{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.messageBtn{
+  padding: 12px 20px;
+  background-color: #C32C31;
+  color: #fff;
+  border: 0;
+  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  position: fixed;
+  bottom: 140px;
+  right: 20px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  z-index: 5465465465;
+  svg{
+    margin-right: 8px;
+  }
+}
+
+.CallBtnFixed{
+  position: fixed;
+  z-index: 879456123;
+  bottom: 80px;
+  right: 20px;
+  padding: 12px 20px;
+  background-color: #C32C31;
+  color: #fff;
+  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  border: 0;
+  svg{
+    margin-right: 8px;
+  }
+}
+
+.MobileFixedBottomBtn{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 16px;
+  background: #fff;
+  button{
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #F2F2F3;
+    margin-left: 8px;
+    width: 48px;
+    height: 48px;
+  }
+  a{
+    //styleName: Title/Default 2;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+    background: #C32C31;
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+
+.fixedBtnHeader{
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+  h5{
+    margin: 0;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #00040A;
+    width: 100%;
+  }
+  button{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #C32C31;
+    border: 0;
+    background: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    svg{
+      width: 20px;
+    }
+  }
+}
+

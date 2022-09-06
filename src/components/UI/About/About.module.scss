@@ -1,0 +1,197 @@
+.BranchesSection {
+  background-color: #F9F9F9;
+  padding-top: 24px;
+
+  .BranchesContainer {
+    .BranchesItem {
+      padding: 24px;
+      background-color: #fff;
+      border-radius: 8px;
+      display: flex;
+      margin-bottom: 16px;
+      .BranchesItemLeft {
+        border-radius: 5px;
+        overflow: hidden;
+        img{
+          width: 100%;
+        }
+      }
+
+      .BranchesItemRight {
+        padding-left: 24px;
+        h4{
+          font-family: Inter;
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 36px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin: 0;
+        }
+        span{
+          font-family: Inter;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 16px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #323232;
+          margin: 14px 0 18px 0;
+          img{
+            margin-right: 8px;
+          }
+        }
+        p{
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin: 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          p{
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #00040A;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            span{
+              font-family: Inter;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 24px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #00040A;
+              margin: 0;
+              display: -webkit-box;
+              -webkit-line-clamp: 4;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+          }
+          span{
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #00040A;
+            margin: 0;
+          }
+        }
+        button{
+          padding: 12px 16px;
+          border-radius: 8px;
+          border: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 18px;
+          letter-spacing: 0px;
+          text-align: left;
+          color: #00040A;
+          transition: 150ms ease-out;
+          img{
+            margin-right: 11px;
+          }
+          &:hover{
+            background-color: #EFEFEF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.BranchesInfoSection{
+  background-color: #F9F9F9;
+  padding-top: 32px;
+  .BranchInfoTitle{
+    padding-bottom: 64px;
+    h2{
+      font-family: Inter;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 34px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #1A1A1A;
+      margin-bottom: 24px;
+    }
+    div{
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  .ourSuggestions{
+    background-color: #fff;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    h3{
+      font-family: Inter;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 37px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #00040A;
+      margin-bottom: 24px;
+    }
+    .ourSuggestionsItems{
+      display: grid;
+      grid-gap: 24px;
+      grid-template-columns: 1fr 1fr 1fr;
+      .ourSuggestionsItem{
+        background-color: #F9F9F9;
+        border-radius: 8px;
+        padding: 16px;
+        h4{
+          font-family: Inter;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin: 16px 0;
+        }
+        p{
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 28px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

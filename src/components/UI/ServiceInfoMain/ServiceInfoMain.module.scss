@@ -1,0 +1,364 @@
+.globalHeader {
+  position: unset !important;
+}
+
+.ServiceInfoMain {
+  border: 1px solid #00000012;
+  position: sticky;
+  top: 81px;
+  z-index: 2;
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navlink {
+    padding: 15px 12px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #00040A !important;
+    transition: 200ms;
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      display: none;
+    }
+
+    &:hover {
+      color: #C32C31 !important;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .navlink {
+    padding: 11px 8px !important;
+
+    p {
+      display: none;
+    }
+
+    span {
+      display: block !important;
+    }
+  }
+  .ServiceInfoMainItems {
+    padding-top: 24px !important;
+    h3 {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      line-height: 20px !important;
+      margin-bottom: 12px !important;
+    }
+  }
+  .ServiceInfoMainPrice{
+    h3{
+      margin-bottom: 12px !important;
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      line-height: 20px !important;
+    }
+  }
+  .ServiceInfoMainPriceItem{
+    padding: 18px 16px !important;
+    h5{
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      line-height: 20px !important;
+      width: 60%;
+    }
+    p{
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      line-height: 20px !important;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .ServiceInfoGeneral{
+    div{
+      width: 100% !important;
+      p{
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 24px !important;
+      }
+    }
+  }
+}
+.ServiceInfoMainItems {
+  padding: 40px 0 0 0;
+  background-color: #F9F9F9;
+
+  h3 {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #00040A;
+    margin-bottom: 24px;
+  }
+
+  .ServiceInfoGeneral {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+
+    p {
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #323232;
+    }
+  }
+}
+
+.ServiceInfoMainSpecialists {
+  background-color: #F9F9F9;
+  padding: 64px 0;
+
+  .ServiceInfoMainSpecialistsTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    h3 {
+      font-family: Inter;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #00040A;
+    }
+
+    a {
+      //styleName: Title/Default 2;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #00040A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 200ms ease-out;
+
+      svg {
+        height: 14px;
+      }
+
+      &:hover {
+        color: #C32C31;
+      }
+    }
+  }
+}
+
+.MainSpecialistsItems {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  .MainSpecialistsItem {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 100%;
+    transition: 150ms ease-out;
+
+    .MainSpecialistsItemInfo {
+      padding: 16px;
+      border-radius: 8px;
+      transition: 150ms ease-out;
+    }
+
+    &:hover .MainSpecialistsItemInfo {
+      background-color: #B5272B !important;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    &:hover p:first-child {
+      color: #fff !important;
+    }
+
+    &:hover p:nth-child(2) {
+      color: #fff !important;
+    }
+
+    &:hover p:nth-child(3) {
+      color: #fff !important;
+    }
+
+    &:hover {
+      background-color: #EFEFEF;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    p:first-child {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #00040A;
+      margin: 0;
+    }
+
+    p:nth-child(2) {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #323232;
+      margin: 8px 0;
+    }
+
+    p:nth-child(3) {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #323232;
+      margin: 0;
+    }
+  }
+
+  .MainSpecialistsItem:nth-child(1), .MainSpecialistsItem:nth-child(2), .MainSpecialistsItem:nth-child(3) {
+    margin-right: 24px;
+  }
+}
+
+.ServiceInfoMainPrice {
+  background-color: #F9F9F9;
+  padding: 40px 0;
+
+  h3 {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #00040A;
+    margin-bottom: 24px;
+  }
+
+  .ServiceInfoMainPriceItems {
+    border-radius: 8px;
+    background-color: #fff;
+
+    .ServiceInfoMainPriceItem {
+      padding: 28px 16px;
+      border-bottom: 1px solid #EDEDED;
+      display: flex;
+      justify-content: space-between;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      h5 {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #00040A;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #00040A;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .ServiceInfoMain {
+    top: 59px;
+  }
+}
+
+.ServiceInfoMainDoctorsMobile{
+  h3{
+    margin-top: 32px;
+    margin-bottom: 12px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #00040A;
+  }
+  .MainSpecialistsItem{
+    .MainSpecialistsItemInfo{
+      padding: 8px;
+      .ServiceInfoMainDoctorsMobileInfoF{
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #00040A;
+        margin: 0;
+      }
+
+      .ServiceInfoMainDoctorsMobileInfoS{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #323232;
+        margin: 8px 0;
+      }
+
+      .ServiceInfoMainDoctorsMobileInfoT{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #323232;
+        margin: 0;
+      }
+    }
+  }
+}

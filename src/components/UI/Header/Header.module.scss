@@ -1,0 +1,238 @@
+//.navbarbrand{
+//  margin-right: 32px !important;
+//}
+.navbarbrandlink{
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.firstHeaderSpan{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 5px;
+}
+.navbars{
+  border-bottom: 1px solid #EDEDED;
+  height: 64px;
+}
+.localeBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #00040A;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+}
+
+.localeBtn:hover{
+  background: none;
+  color: #00040A;
+}
+
+.show > .localeBtn.dropdown-toggle:focus{
+  box-shadow: none;
+}
+
+.show > .localeBtn.dropdown-toggle{
+  color: red;
+}
+
+.dropdownmenu{
+  min-width: 40px;
+}
+
+.navlink{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #00040A !important;
+  transition: 100ms ease-out;
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  margin-right: 32px;
+}
+
+.navlink:hover{
+  color: #B5272B !important;
+}
+
+.accBtn{
+  background-color: #F9F9F9;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #00040A;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 16px;
+  border-radius: 8px;
+  padding: 15px 16px;
+}
+
+.accBtn:hover{
+  background-color: #EFEFEF;
+  color: #00040A;
+}
+
+.accBtn img{
+  margin-right: 11px;
+}
+
+.loggedBtn{
+  background-color: #F9F9F9;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #00040A;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 16px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  & img{
+    margin-right: 11px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: contain;
+  }
+  &:hover{
+    background-color: #EFEFEF;
+    color: #00040A;
+  }
+}
+
+.orderBtn{
+  background-color: #C32C31;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 15px 16px;
+}
+
+.orderBtn:hover{
+  background-color: #B5272B;
+}
+
+.headerMobileNav{
+  padding: 17px 20px;
+  border-bottom: 1px solid #EDEDED;
+  button{
+    background: none;
+    color: #00040A;
+    border: 0;
+    &:hover{
+      background: none;
+    }
+  }
+}
+
+.mobileHeaderTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: center;
+    padding: 10px 0;
+    background: #F2F2F3;
+    border-radius: 8px;
+    width: 100%;
+    color: #00040A;
+    &:first-child{
+      margin-right: 16px;
+    }
+    &:hover{
+      background: #EFEFEF;
+    }
+    img{
+      margin-right: 10px;
+    }
+  }
+}
+
+.mobileHeaderBody{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li{
+    border-bottom: 1px solid #F2F2F3;
+    a{
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0px;
+      text-align: left;
+      padding: 16px 0;
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .mobileHeaderTop{
+    flex-direction: column;
+    a{
+      margin: 0 !important;
+      margin-bottom: 8px !important;
+    }
+  }
+}
+
+.mobileHeaderLocalization{
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  span{
+    margin-right: 16px;
+  }
+  a{
+    padding: 8px 20px !important;
+    border-radius: 8px;
+    margin-right: 2px;
+    max-width: 80px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    &.activeLocal{
+      background: #F2F2F3;
+    }
+  }
+}

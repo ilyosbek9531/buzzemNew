@@ -1,0 +1,217 @@
+.daterow{
+  display: flex;
+  .daterowempty{
+    width: 150px;
+    height: 32px;
+    border: 1px solid #EDEDED;
+    border-left: none;
+    background-color: #fff;
+  }
+  .dateRowItems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #EDEDED;
+    width: 150px;
+    height: 32px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+    &:last-child{
+      border-right: none;
+    }
+    span{
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.006em;
+      text-align: left;
+      color: #000000;
+    }
+  }
+}
+.timeColumn{
+  width: 150px;
+  .timeColumnItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border: 1px solid #EDEDED;
+    border-left: 0;
+    background-color: #fff;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.006em;
+    text-align: left;
+    color: #66686C;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+}
+
+.dataColumnContainer{
+  display: flex;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+    .dataColumnItems{
+      width: 150px;
+      &:last-child{
+        .dataColumnItem{
+          border-right: none;
+        }
+      }
+      .dataColumnItem{
+        height: 32px;
+        border: 1px solid #EDEDED;
+        &:last-child{
+          border-right: none;
+        }
+      }
+    }
+}
+
+.dataColumnItem{
+  height: 32px;
+  width: 150px;
+  border: 1px solid #EDEDED;
+}
+
+.calendarContainer{
+  overflow: scroll;
+  display: flex;
+  height: 60vh;
+
+}
+
+.daterowempty{
+  width: 150px;
+  height: 32px;
+  border: 1px solid #EDEDED;
+  border-left: none;
+  background-color: #fff;
+}
+
+.dateContainer{
+  position: relative;
+  height: max-content;
+  .bookedItem{
+    position: absolute;
+    padding: 0 5px;
+    top: 100px;
+    .bookedItemIn{
+      background-color: #E2F4E6;
+      width: 140px;
+      height: 30px;
+      border-radius: 5px;
+      padding: 8px;
+      overflow: hidden;
+      span:first-child, span:last-child{
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      span:nth-child(2){
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 4px 0;
+      }
+
+      span{
+        display: block;
+      }
+    }
+  }
+}
+
+.CheckOrderLeftSecondContainerItemInfoFoot {
+  display: flex;
+
+  img {
+    margin-right: 6px;
+  }
+
+  span {
+    margin-bottom: 0;
+  }
+
+  & div {
+    margin-right: 14px;
+  }
+}
+
+.AboutVisitModalBody{
+  div{
+    margin: 0;
+  }
+  display: flex;
+  .modalBodyImage{
+    width: 30%;
+    background-color: #F2F2F3;
+    padding: 8px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .modalBodyInfo{
+    margin-left: 12px;
+    p{
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #00040A;
+    }
+    svg{
+      color: #D90506;
+    }
+  }
+}
+
+.AboutVisitModalHeader{
+  margin-bottom: 0 !important;
+  h4{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #00040A;
+    margin-bottom: 12px;
+  }
+  p{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #00040A;
+    margin-bottom: 0;
+  }
+}
+
+.AboutVisitModalHr{
+  margin: 12px 0;
+}

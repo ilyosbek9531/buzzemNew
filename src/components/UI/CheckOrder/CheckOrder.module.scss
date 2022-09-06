@@ -1,0 +1,396 @@
+.CheckOrderSection {
+  padding: 40px 0 200px 0;
+  background-color: #F9F9F9;
+
+  h3 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #00040A;
+    margin-bottom: 24px;
+  }
+
+  .CheckOrderContainer {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-gap: 24px;
+
+    .CheckOrderLeft {
+      .CheckOrderLeftFirst {
+        background-color: #fff;
+        box-shadow: 0px 0px 45px 0px #0000000D;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+
+        h4 {
+          font-family: Inter;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin-bottom: 16px;
+        }
+
+        .inputContainer {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 24px;
+
+          label {
+            //styleName: Title/Small 3;
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: #00040A;
+            margin-bottom: 4px;
+          }
+
+          input {
+            border: 1px solid #E6E6E6;
+            padding: 12px;
+            border-radius: 8px;
+            color: #00040A;
+
+            &:focus {
+              box-shadow: none;
+              border: 1px solid #E6E6E6;
+            }
+          }
+        }
+      }
+
+      .CheckOrderLeftSecond {
+        background-color: #fff;
+        box-shadow: 0px 0px 45px 0px #0000000D;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+
+        h4 {
+          font-family: Inter;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin-bottom: 16px;
+        }
+
+        .CheckOrderLeftSecondContainer {
+          .CheckOrderLeftSecondContainerItem {
+            display: flex;
+            border: 1px solid #EDEDED;
+            border-radius: 8px;
+            padding: 8px;
+            position: relative;
+            margin-bottom: 16px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .CheckOrderLeftSecondContainerItemImg {
+              border-radius: 8px;
+              background-color: #F5F5F5;
+              max-width: 100px;
+              display: flex;
+              align-items: end;
+              justify-content: center;
+              margin-right: 12px;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .CheckOrderLeftSecondContainerItemInfo {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+
+              h5 {
+                //styleName: Title/Default 2;
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 18px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #00040A;
+                margin-bottom: 10px;
+              }
+
+              p {
+                //styleName: Title/Small 3;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #00040A;
+                margin-bottom: 8px;
+              }
+
+              span {
+                //styleName: Title/Small 3;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #00040A;
+                margin-bottom: 11px;
+                display: block;
+              }
+
+              .CheckOrderLeftSecondContainerItemInfoFoot {
+                display: flex;
+
+                img {
+                  margin-right: 6px;
+                }
+
+                span {
+                  margin-bottom: 0;
+                }
+
+                & div {
+                  margin-right: 14px;
+                }
+              }
+            }
+
+            .CheckOrderLeftSecondContainerItemDel {
+              position: absolute;
+              right: 0;
+
+              button {
+                background-color: transparent;
+                border: 0;
+
+                svg {
+                  fill: #808080;
+                }
+              }
+            }
+          }
+
+        }
+
+      }
+
+      .CheckOrderLeftThird {
+        background-color: #fff;
+        box-shadow: 0px 0px 45px 0px #0000000D;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+
+        h4 {
+          font-family: Inter;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin-bottom: 16px;
+        }
+
+        .CheckOrderLeftThirdContainer {
+          display: flex;
+          justify-content: space-between;
+
+          button {
+            width: 100%;
+            margin-right: 24px;
+            border: 1px solid #00040A12;
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 13px 12px;
+            //styleName: Title/Default 2;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: 0px;
+            text-align: left;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .CheckOrderLeftFourth {
+        background-color: #fff;
+        box-shadow: 0px 0px 45px 0px #0000000D;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+
+        h4 {
+          font-family: Inter;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #00040A;
+          margin-bottom: 16px;
+        }
+
+        .CheckOrderLeftFourthContainer {
+          display: flex;
+          justify-content: space-between;
+
+          button {
+            width: 100%;
+            margin-right: 24px;
+            border: 1px solid #00040A12;
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 13px 12px;
+            //styleName: Title/Default 2;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: 0px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            img {
+              margin-right: 11px;
+            }
+          }
+        }
+      }
+    }
+
+    .CheckOrderRight {
+      background-color: #fff;
+      box-shadow: 0px 0px 45px 0px #0000000D;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      height: max-content;
+
+      h4 {
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #00040A;
+        margin-bottom: 16px;
+      }
+
+      .CheckOrderRightBody {
+        div{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 16px;
+          span{
+            //styleName: Title/Default 3;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #323232;
+          }
+          p{
+            //styleName: Title/Big 1;
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #323232;
+            margin-bottom: 0;
+          }
+        }
+        hr{
+          margin: 16px 0;
+          color: #dadada;
+        }
+
+        .btnpredoplata{
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 18px;
+          letter-spacing: 0px;
+          text-align: center;
+          color: #00040A;
+          background: #F2F2F3;
+          border-radius: 8px;
+          padding: 15px 30px;
+          width: 100%;
+          border: 0;
+          margin-bottom: 16px;
+          transition: 200ms ease-out;
+          &:hover{
+            background: #EFEFEF;
+          }
+        }
+        .btnfullpay{
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 18px;
+          letter-spacing: 0px;
+          text-align: center;
+          color: #fff;
+          background: #C32C31;
+          border-radius: 8px;
+          padding: 15px 30px;
+          width: 100%;
+          border: 0;
+          margin-bottom: 16px;
+          transition: 200ms ease-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover{
+            background: #B5272B;
+          }
+        }
+
+        p{
+          //styleName: Body text/Default;
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          margin-bottom: 0;
+          color: #66686C;
+        }
+      }
+    }
+  }
+}

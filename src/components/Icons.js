@@ -92,3 +92,27 @@ export const ArrowBottomIcon = () => (
     />
   </svg>
 );
+
+export const SearchIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.5 19.0001C15.1944 19.0001 19 15.1945 19 10.5001C19 5.80566 15.1944 2.00006 10.5 2.00006C5.8056 2.00006 2 5.80566 2 10.5001C2 15.1945 5.8056 19.0001 10.5 19.0001Z"
+      stroke="#F8F9FA"
+      strokeWidth="2"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16.6108 16.6109L20.8535 20.8535"
+      stroke="#F8F9FA"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

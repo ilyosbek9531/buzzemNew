@@ -1,5 +1,5 @@
-import { Main } from 'components/UI/Main/Main'
-import SEO from 'components/SEO'
+import { Main } from "components/Pages/Main/Main";
+import SEO from "components/SEO";
 
 export default function Home() {
   return (
@@ -7,7 +7,5 @@ export default function Home() {
       <SEO />
       <Main />
     </>
-  )
+  );
 }
-
-

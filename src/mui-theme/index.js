@@ -36,7 +36,7 @@ export default createTheme({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#F7AC29",
+
           "@media (max-width: 768px)": {
             height: `${rem(40)}`,
             fontSize: `${rem(12)} !important`,
@@ -44,26 +44,28 @@ export default createTheme({
           "&:hover": {
             border: "none",
             boxShadow: "none !important",
-            background: "#F7AC29",
-            opacity: "0.8",
           },
           svg: {
             marginRight: 0,
           },
         },
         outlined: {
-          color: "#108292",
-          background: "#EEF0F2",
+          color: "#F7AC29",
+          border: "1px solid #F7AC29",
           padding: `${rem(12)} ${rem(24)}`,
           "&:hover": {
-            color: "#108292",
-            background: "#EEF0F2",
+            border: "1px solid #F7AC29",
           },
         },
         contained: {
           padding: `${rem(12)} ${rem(24)}`,
           color: "#fff",
-          background: "#108292",
+          background: "#F7AC29",
+
+          "&:hover": {
+            background: "#F7AC29",
+            opacity: "0.8",
+          },
         },
       },
     },

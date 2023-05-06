@@ -41,6 +41,7 @@ const Banner = () => {
                       boxShadow: "0px 4px 16px rgba(79, 70, 229, 0.16)",
                       borderRadius: "50px !important",
                     }}
+                    variant="contained"
                   />
                 </div>
               </div>

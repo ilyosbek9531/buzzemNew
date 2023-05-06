@@ -12,6 +12,7 @@ const MainButton = ({
   isProfile,
   sx,
   isClicked,
+  endIcon,
   ...restProps
 }) => {
   return (
@@ -19,6 +20,7 @@ const MainButton = ({
       type={type}
       disabled={disabled}
       startIcon={icon}
+      endIcon={endIcon}
       fullWidth={fullWidth}
       variant={variant}
       onClick={onClick}

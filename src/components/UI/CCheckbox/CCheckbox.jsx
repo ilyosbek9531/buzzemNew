@@ -6,16 +6,14 @@ import styles from "./CCheckbox.module.scss";
 
 export default function CCheckbox({ checkboxOptions, checked, setChecked }) {
   const handleChange1 = (isChecked) => {
-    if (isChecked) return setChecked(checkboxOptions.map((el) => el));
+    if (isChecked) return setChecked(checkboxOptions.map((el) => el.id));
     else setChecked([]);
   };
 
-  const handleChange2 = (isChecked, item) => {
-    const index = checkboxOptions.indexOf(item);
-
-    if (isChecked) return setChecked((state) => [...state, item]);
-    if (!isChecked && index > -1) {
-      return setChecked((state) => state.filter((el) => el !== item));
+  const handleChange2 = (isChecked, id) => {
+    if (isChecked) return setChecked((state) => [...state, id]);
+    if (!isChecked) {
+      return setChecked((state) => state.filter((el) => el !== id));
     }
   };
 
@@ -28,17 +26,17 @@ export default function CCheckbox({ checkboxOptions, checked, setChecked }) {
     >
       {checkboxOptions?.map((item) => (
         <FormControlLabel
-          label={item}
+          label={item.name}
           control={
             <Checkbox
-              checked={checked.includes(item)}
-              onChange={(event) => handleChange2(event.target.checked, item)}
+              checked={checked.includes(item.id)}
+              onChange={(event) => handleChange2(event.target.checked, item.id)}
               sx={{
                 color: "var(--text-color) !important",
               }}
             />
           }
-          key={item}
+          key={item.id}
         />
       ))}
     </Box>
@@ -50,9 +48,9 @@ export default function CCheckbox({ checkboxOptions, checked, setChecked }) {
         label="Select all"
         control={
           <Checkbox
-            checked={checked.length === checkboxOptions.length}
+            checked={checked.length === checkboxOptions?.length}
             indeterminate={
-              checked.length !== checkboxOptions.length && checked.length > 0
+              checked.length !== checkboxOptions?.length && checked.length > 0
             }
             onChange={(event) => handleChange1(event.target.checked)}
             sx={{

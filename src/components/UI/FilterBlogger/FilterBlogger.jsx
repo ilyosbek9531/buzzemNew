@@ -12,6 +12,7 @@ const FilterBlogger = ({
   gender,
   setGender,
   CategoriesOption,
+  PlatformsOption,
   ratingOptions,
   checkedCategory,
   checkedPlatform,
@@ -52,17 +53,17 @@ const FilterBlogger = ({
         setChecked={setCheckedCategory}
       />
       <CCollapse
-        checkboxOptions={CategoriesOption}
+        checkboxOptions={PlatformsOption}
         filterBy="By platform"
         checked={checkedPlatform}
         setChecked={setCheckedPlatform}
       />
-      <CCollapse
+      {/* <CCollapse
         checkboxOptions={ratingOptions}
         filterBy="By rating"
         checked={checkedRating}
         setChecked={setCheckedRating}
-      />
+      /> */}
     </div>
   );
 };

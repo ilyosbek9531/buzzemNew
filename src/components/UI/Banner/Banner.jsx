@@ -4,8 +4,11 @@ import { Container } from "@mui/material";
 import { ArrowBottomIcon, SearchIcon } from "components/Icons";
 import MainButton from "../MainButton/MainButton";
 import { useRouter } from "next/router";
+import { setOpenSidebar } from "store/sidebar";
+import { useDispatch } from "react-redux";
 
 const Banner = () => {
+  const dispatch = useDispatch();
   const { push } = useRouter();
   const inputRef = useRef(null);
 
@@ -50,9 +53,12 @@ const Banner = () => {
               <div className={styles.banner__content__search__more}>
                 <div
                   className={styles.banner__content__search__more__content}
-                  onClick={() => push("/blogger")}
+                  onClick={() => {
+                    dispatch(setOpenSidebar(true));
+                    push("/blogger");
+                  }}
                 >
-                  <h4>ADVANCER SEARCH</h4>
+                  <h4>ADVANCED SEARCH</h4>
                   <ArrowBottomIcon />
                 </div>
               </div>

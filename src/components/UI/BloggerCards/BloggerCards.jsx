@@ -3,15 +3,18 @@ import styles from "./BloggerCards.module.scss";
 import { DownArrow, SearchIcon } from "components/Icons";
 import BloggerCard from "../BloggerCard/BloggerCard";
 import { Grid } from "@mui/material";
+import { setOpenSidebar } from "store/sidebar";
+import { useDispatch } from "react-redux";
 
-const BloggerCards = ({ setOpen, open, bloggers }) => {
+const BloggerCards = ({ open, bloggers }) => {
+  const dispatch = useDispatch();
   const inputRef = useRef();
   return (
     <div className={styles.cards}>
       <div className={styles.cards__top}>
         <div
           className={styles.cards__top__open}
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={() => dispatch(setOpenSidebar(!open))}
         >
           <div className={styles.cards__top__open__arrow}>
             <DownArrow width="20" height="20" />

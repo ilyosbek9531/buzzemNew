@@ -5,7 +5,12 @@ import Drawer from "@mui/material/Drawer";
 import FilterBlogger from "components/UI/FilterBlogger/FilterBlogger";
 import BloggerCards from "components/UI/BloggerCards/BloggerCards";
 import { useState } from "react";
-import { UseGetBloggers } from "services/blogger.service";
+import {
+  UseGetBloggers,
+  UseGetCategories,
+  UseGetPlatforms,
+} from "services/blogger.service";
+import { useSelector } from "react-redux";
 
 const drawerWidth = 260;
 
@@ -28,13 +33,10 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
 );
 
 export default function Blogger() {
-  const [open, setOpen] = useState(false);
+  const open = useSelector((state) => state.sidebar.sidebar);
   const [checkedCategory, setCheckedCategory] = useState([]);
   const [checkedPlatform, setCheckedPlatform] = useState([]);
   const [checkedRating, setCheckedRating] = useState([]);
-  console.log("checkedCategory", checkedCategory);
-  console.log("checkedPlatform", checkedPlatform);
-  console.log("checkedRating", checkedRating);
   const [select, setSelect] = useState({
     age: "",
     language: "",
@@ -42,27 +44,48 @@ export default function Blogger() {
   });
   const [gender, setGender] = useState("");
 
-  const { data: bloggers } = UseGetBloggers({
-    queryParams: {},
+  const { data: bloggersFilter } = UseGetBloggers({
+    queryParams: "",
+  });
+
+  const queryParams = Object.entries({
+    full_name: "",
+    gender,
+    age: "",
+    language: "",
+    country: select.location,
+    category: checkedCategory.join(","),
+    platform: checkedPlatform.join(","),
+    rating: "",
+  })
+    .filter(([key, value]) => value !== "")
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+    )
+    .join("&");
+
+  const { data: bloggersData } = UseGetBloggers({
+    queryParams,
   });
 
   const languagesOption = [
     ...new Set(
-      bloggers
+      bloggersFilter
         ?.map((blogger) => blogger.languages.map((el) => el?.short_form))
         .flat()
     ),
   ];
 
-  const CountrySelect = [...new Set(bloggers?.map((el) => el.country))];
+  const CountrySelect = [...new Set(bloggersFilter?.map((el) => el.country))];
 
-  const CategoriesOption = [
-    ...new Set(
-      bloggers
-        ?.map((blogger) => blogger.categories.map((el) => el?.name))
-        .flat()
-    ),
-  ];
+  const { data: CategoriesOption } = UseGetCategories({
+    queryParams: "",
+  });
+
+  const { data: PlatformsOption } = UseGetPlatforms({
+    queryParams: "",
+  });
 
   const ratingOptions = ["Useless", "Poor", "Ok", "Good", "Excelent"];
 
@@ -97,10 +120,11 @@ export default function Blogger() {
           setCheckedCategory={setCheckedCategory}
           setCheckedPlatform={setCheckedPlatform}
           setCheckedRating={setCheckedRating}
+          PlatformsOption={PlatformsOption}
         />
       </Drawer>
       <Main open={open}>
-        <BloggerCards setOpen={setOpen} open={open} bloggers={bloggers} />
+        <BloggerCards open={open} bloggers={bloggersData} />
       </Main>
     </Box>
   );

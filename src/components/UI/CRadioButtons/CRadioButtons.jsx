@@ -37,12 +37,12 @@ function CRadioButtons({ gender, setGender }) {
       classes={{ root: classes.root }}
     >
       <FormControlLabel
-        value="male"
+        value="M"
         control={<Radio onClick={handleClick} />}
         label="Male"
       />
       <FormControlLabel
-        value="female"
+        value="F"
         control={<Radio onClick={handleClick} />}
         label="Female"
       />

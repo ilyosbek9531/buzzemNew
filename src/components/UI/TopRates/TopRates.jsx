@@ -4,6 +4,7 @@ import { Container, Grid } from "@mui/material";
 import TopRatesCard from "../TopRatesCard/TopRatesCard";
 import MainButton from "../MainButton/MainButton";
 import { RightArrowIcon } from "components/Icons";
+import { useRouter } from "next/router";
 
 const topRatesData = [
   {
@@ -87,6 +88,7 @@ const topRatesData = [
 ];
 
 const TopRates = () => {
+  const { push } = useRouter();
   return (
     <Container>
       <div className={styles.rates}>
@@ -114,6 +116,7 @@ const TopRates = () => {
             text="Full list"
             endIcon={<RightArrowIcon />}
             variant="outlined"
+            onClick={() => push("/blogger")}
           />
         </div>
       </div>

@@ -3,6 +3,8 @@
 .footer {
   padding: 32px;
   background: #f1f7ff;
+  position: relative;
+  z-index: 9999;
 
   &__content {
     @include justify-content-between;

@@ -3,8 +3,10 @@ import styles from "./Banner.module.scss";
 import { Container } from "@mui/material";
 import { ArrowBottomIcon, SearchIcon } from "components/Icons";
 import MainButton from "../MainButton/MainButton";
+import { useRouter } from "next/router";
 
 const Banner = () => {
+  const { push } = useRouter();
   const inputRef = useRef(null);
 
   const handleFocusInput = () => {
@@ -46,7 +48,10 @@ const Banner = () => {
                 </div>
               </div>
               <div className={styles.banner__content__search__more}>
-                <div className={styles.banner__content__search__more__content}>
+                <div
+                  className={styles.banner__content__search__more__content}
+                  onClick={() => push("/blogger")}
+                >
                   <h4>ADVANCER SEARCH</h4>
                   <ArrowBottomIcon />
                 </div>

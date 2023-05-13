@@ -1,7 +1,6 @@
 @import "styles/unit.scss";
 
 .card {
-  height: 100%;
   padding: 16px 32px;
   background: #ffffff;
   border: 1px solid #e7f1ff;
@@ -10,6 +9,7 @@
   gap: rem(16);
   text-align: start;
   cursor: pointer;
+  height: rem(282.5);
 
   h3 {
     font-weight: 600;
@@ -27,5 +27,13 @@
     font-size: 14px;
     line-height: 19px;
     color: #959dc7;
+    width: 100%;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    min-height: rem(54.76);
   }
 }

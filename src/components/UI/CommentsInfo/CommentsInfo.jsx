@@ -3,36 +3,54 @@ import styles from "./CommentsInfo.module.scss";
 import CRating from "../Rating/Rating";
 import { LikeIcon, LikeIconReverse, ProhibetIcon } from "components/Icons";
 
-const CommentsInfo = () => {
+const colors = ["#0D6EFD", "#198754", "#6F42C1", "#F7AC29", "#db463b"];
+let lastIndex = -1;
+
+function pickRandomElement() {
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * colors.length);
+  } while (randomIndex === lastIndex);
+  lastIndex = randomIndex;
+  return colors[randomIndex];
+}
+
+const CommentsInfo = ({
+  rater_name,
+  rate,
+  platform,
+  message,
+  likes,
+  dislikes,
+}) => {
   return (
     <div className={styles.info}>
-      <img src="/images/avatar.png" alt="avatar" />
+      <div className={styles.image} style={{ background: pickRandomElement() }}>
+        {rater_name.slice(0, 1)}
+      </div>
       <div className={styles.info__content}>
-        <h3>Somebody 1</h3>
+        <h3>{rater_name}</h3>
         <div className={styles.info__content__rating}>
           <div className={styles.info__content__rating__item}>
-            <CRating value={1.5} name="read-only" />
-            <span>1.5</span>
+            <CRating value={+rate} name="read-only" />
+            <span>{rate}</span>
           </div>
           <div className={styles.info__content__rating__platform}>
             <p>
-              For: <span>Youtube</span>
+              For: <span>{platform}</span>
             </p>
           </div>
         </div>
-        <div className={styles.info__content__information}>
-          From the consumers point of view, how much faster is 5G compared to 4G
-          in terms of data transfer much faster?
-        </div>
+        <div className={styles.info__content__information}>{message}</div>
         <div className={styles.info__content__bottom}>
           <div className={styles.info__content__bottom__like}>
             <div className={styles.info__content__bottom__like__item}>
               <LikeIcon />
-              <h6>5985</h6>
+              <h6>{likes}</h6>
             </div>
             <div className={styles.info__content__bottom__like__item}>
               <LikeIconReverse />
-              <h6>899</h6>
+              <h6>{dislikes}</h6>
             </div>
           </div>
           <div className={styles.info__content__bottom__report}>

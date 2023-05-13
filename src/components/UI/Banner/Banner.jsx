@@ -1,20 +1,42 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./Banner.module.scss";
-import { Container } from "@mui/material";
+import { Collapse, Container } from "@mui/material";
 import { ArrowBottomIcon, SearchIcon } from "components/Icons";
 import MainButton from "../MainButton/MainButton";
 import { useRouter } from "next/router";
 import { setOpenSidebar } from "store/sidebar";
 import { useDispatch } from "react-redux";
+import { useDebounce } from "utils/useDebounce";
+import { UseGetBloggersMain } from "services/blogger.service";
+import Link from "next/link";
 
 const Banner = () => {
   const dispatch = useDispatch();
   const { push } = useRouter();
   const inputRef = useRef(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  const queryParams = Object.entries({
+    full_name: debouncedSearchTerm,
+  })
+    .filter(([key, value]) => value !== "")
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+    )
+    .join("&");
+
+  const { data: bloggersData } = UseGetBloggersMain({
+    queryParams,
+    debouncedSearchTerm,
+  });
 
   const handleFocusInput = () => {
     inputRef.current.focus();
   };
+
+  console.log("bloggersData", bloggersData);
 
   return (
     <>
@@ -36,6 +58,7 @@ const Banner = () => {
                   type="text"
                   placeholder="Search blogger ..."
                   ref={inputRef}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <div className={styles.banner__content__search__input__button}>
                   <MainButton
@@ -50,6 +73,31 @@ const Banner = () => {
                   />
                 </div>
               </div>
+              <div className={styles.banner__content__search__items}>
+                <Collapse in={!!bloggersData?.length} collapsedSize={0}>
+                  <div className={styles.time__content}>
+                    {bloggersData?.map((item) => (
+                      <Link
+                        href={`/blogger/${item.slug}`}
+                        key={item.slug}
+                        passHref
+                      >
+                        <div
+                          className={
+                            styles.banner__content__search__items__card
+                          }
+                        >
+                          <img src={item.image} alt="personImg" />
+                          <div>
+                            <h2>{item.full_name}</h2>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </Collapse>
+              </div>
+
               <div className={styles.banner__content__search__more}>
                 <div
                   className={styles.banner__content__search__more__content}

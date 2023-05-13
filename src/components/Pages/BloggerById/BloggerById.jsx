@@ -51,7 +51,7 @@ const BloggerById = () => {
         />
         <BloggerSocial />
         <Reviews />
-        <Comments />
+        <Comments id={blogger?.id} />
       </div>
     </>
   );

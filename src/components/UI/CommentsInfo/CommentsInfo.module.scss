@@ -4,11 +4,14 @@
   display: flex;
   gap: rem(32);
 
-  img {
-    width: rem(50);
-    height: rem(50);
-    object-fit: cover;
+  .image {
+    min-width: rem(50);
+    max-width: rem(50);
+    min-height: rem(50);
+    max-height: rem(50);
     border-radius: 50%;
+    @include element-center;
+    color: #fff;
   }
 
   &__content {

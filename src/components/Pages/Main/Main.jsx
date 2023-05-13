@@ -2,7 +2,11 @@ import Categories from "components/UI/Categories/Categories";
 import Banner from "../../UI/Banner/Banner";
 import TopRates from "components/UI/TopRates/TopRates";
 import Review from "components/UI/Review/Review";
-import { UseGetBloggers } from "services/blogger.service";
+import {
+  UseGetAllCategories,
+  UseGetBloggers,
+  UseGetRatings,
+} from "services/blogger.service";
 
 export function Main() {
   const { data: bloggersData } = UseGetBloggers({
@@ -11,12 +15,20 @@ export function Main() {
     },
   });
 
+  const { data: reviews } = UseGetRatings({
+    queryParams: "",
+  });
+
+  const { data: categories } = UseGetAllCategories({
+    queryParams: "",
+  });
+
   return (
     <main>
       <Banner />
-      <Categories />
+      <Categories categories={categories} />
       <TopRates bloggersData={bloggersData} />
-      <Review />
+      <Review reviews={reviews} />
     </main>
   );
 }

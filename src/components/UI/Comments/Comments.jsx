@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Comments.module.scss";
 import MainButton from "../MainButton/MainButton";
 import { useForm } from "react-hook-form";
@@ -6,10 +6,15 @@ import CRating from "../Rating/Rating";
 import { Button, Grid, MenuItem, Select } from "@mui/material";
 import { DownArrow } from "components/Icons";
 import CommentsInfo from "../CommentsInfo/CommentsInfo";
+import {
+  UseCreateComments,
+  UseGetPlatforms,
+  UseGetSingleRatings,
+} from "services/blogger.service";
+import { useRouter } from "next/router";
 
-const optionsPlatform = ["youtube", "telegram"];
-
-const Comments = () => {
+const Comments = ({ id }) => {
+  const { query } = useRouter();
   const [ratingValue, setRatingValue] = useState("");
 
   const { handleSubmit, register, reset } = useForm({
@@ -21,9 +26,29 @@ const Comments = () => {
     },
   });
 
+  const { mutate: createComments } = UseCreateComments({
+    onSuccess: () => {
+      console.log("success");
+    },
+  });
+
   const onSubmit = (data) => {
-    console.log("data", data);
+    createComments({
+      blogger_id: id,
+      social_media_account_id: data.platform.id,
+      rater_name: data.name,
+      message: data.comment,
+      rate: ratingValue,
+    });
   };
+
+  const { data: rating } = UseGetSingleRatings({
+    id: query.id,
+  });
+
+  const { data: PlatformsOption } = UseGetPlatforms({
+    queryParams: "",
+  });
 
   return (
     <div className={styles.comments}>
@@ -57,9 +82,9 @@ const Comments = () => {
                   IconComponent={() => <DownArrow width="15" height="15" />}
                 >
                   <MenuItem value="">All</MenuItem>
-                  {optionsPlatform?.map((option) => (
+                  {PlatformsOption?.map((option) => (
                     <MenuItem value={option} key={option}>
-                      {option}
+                      {option.name}
                     </MenuItem>
                   ))}
                 </Select>
@@ -111,9 +136,16 @@ const Comments = () => {
       </div>
       <div className={styles.comments__info}>
         <Grid container spacing={{ xs: 2, sm: 3 }}>
-          {[1, 2, 3].map((item) => (
+          {rating?.map((item) => (
             <Grid item xs={12} key={item.id}>
-              <CommentsInfo />
+              <CommentsInfo
+                rater_name={item.rater_name}
+                rate={item.rate}
+                platform={item.platform.name}
+                message={item.message}
+                likes={item.likes}
+                dislikes={item.dislikes}
+              />
             </Grid>
           ))}
         </Grid>

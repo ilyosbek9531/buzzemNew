@@ -43,6 +43,7 @@
       flex-direction: column;
       margin-top: rem(70);
       gap: rem(16);
+      position: relative;
 
       &__input {
         width: 100%;
@@ -85,6 +86,45 @@
           @include align-items-center;
           cursor: pointer;
           gap: rem(10);
+        }
+      }
+
+      &__items {
+        position: absolute;
+        z-index: 99999;
+        top: 110%;
+        width: 100%;
+        border-radius: 10px;
+        max-height: 400px;
+        overflow-y: scroll;
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 0px 4px 24px rgba(4, 22, 116, 0.08);
+        backdrop-filter: blur(12px);
+
+        &__card {
+          border: 1px solid red;
+          padding: 8px 16px;
+          border: 1px solid #e7f1ff;
+          width: 100%;
+          @include align-items-center;
+          gap: rem(32);
+          cursor: pointer;
+
+          img {
+            max-width: rem(80);
+            min-width: rem(80);
+            max-height: rem(80);
+            min-height: rem(80);
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          h2 {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 26px;
+            color: var(--text-color);
+          }
         }
       }
     }

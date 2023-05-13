@@ -5,122 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Grid, Pagination } from "swiper";
 import ReviewCard from "../ReviewCard/ReviewCard";
 
-const reviewData = [
-  {
-    id: 1,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 2,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 3,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 4,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 5,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 6,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 7,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 8,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 9,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 10,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 11,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 12,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 13,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 14,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 15,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-  {
-    id: 16,
-    name: "John Doe",
-    about: "Asror Majid",
-    info: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ",
-    rating: 2.7,
-  },
-];
-
-const Review = () => {
+const Review = ({ reviews }) => {
   return (
     <div className={styles.review}>
       <Container>
@@ -140,13 +25,13 @@ const Review = () => {
               modules={[Grid, Pagination]}
               className="mySwiper"
             >
-              {reviewData?.map((el) => (
+              {reviews?.map((el) => (
                 <SwiperSlide key={el.id}>
                   <ReviewCard
-                    name={el.name}
-                    about={el.about}
-                    info={el.info}
-                    rating={el.rating}
+                    name={el.rater_name}
+                    about={el.blogger.full_name}
+                    info={el.message}
+                    rating={el.rate}
                   />
                 </SwiperSlide>
               ))}

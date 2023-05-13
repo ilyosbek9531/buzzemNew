@@ -31,6 +31,10 @@
       border-radius: 44px;
       @include justify-content-between;
       width: rem(451);
+
+      input {
+        width: 100%;
+      }
     }
   }
 }

@@ -6,7 +6,7 @@ import { Grid } from "@mui/material";
 import { setOpenSidebar } from "store/sidebar";
 import { useDispatch } from "react-redux";
 
-const BloggerCards = ({ open, bloggers }) => {
+const BloggerCards = ({ open, bloggers, setSearchTerm }) => {
   const dispatch = useDispatch();
   const inputRef = useRef();
   return (
@@ -22,7 +22,12 @@ const BloggerCards = ({ open, bloggers }) => {
           <h5>Filters</h5>
         </div>
         <div className={styles.search} onClick={() => inputRef.current.focus()}>
-          <input type="text" placeholder="Search . . ." ref={inputRef} />
+          <input
+            type="text"
+            placeholder="Search . . ."
+            ref={inputRef}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <SearchIcon stroke="#F7AC29" />
         </div>
       </div>

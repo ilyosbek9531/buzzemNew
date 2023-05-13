@@ -51,19 +51,22 @@ const FilterBlogger = ({
         filterBy="By categories"
         checked={checkedCategory}
         setChecked={setCheckedCategory}
+        count="num_of_bloggers"
       />
       <CCollapse
         checkboxOptions={PlatformsOption}
         filterBy="By platform"
         checked={checkedPlatform}
         setChecked={setCheckedPlatform}
+        count="num_of_accounts"
       />
-      {/* <CCollapse
+      <CCollapse
         checkboxOptions={ratingOptions}
         filterBy="By rating"
         checked={checkedRating}
         setChecked={setCheckedRating}
-      /> */}
+        count="count"
+      />
     </div>
   );
 };

@@ -6,107 +6,28 @@ import MainButton from "../MainButton/MainButton";
 import { RightArrowIcon } from "components/Icons";
 import { useRouter } from "next/router";
 
-const topRatesData = [
-  {
-    id: 1,
-    img: "/images/avatar.png",
-    category: "Daily life",
-    rating: 4.6,
-    name: "Nozima Musaboyeva",
-    telegram: "",
-    youtube: "",
-    facebook: "",
-    instagram: "",
-    location: "Uzbekistan",
-    language: "En, Ru",
-  },
-  {
-    id: 2,
-    img: "/images/avatar.png",
-    category: "Daily life",
-    rating: 4.6,
-    name: "Nozima Musaboyeva",
-    telegram: "",
-    youtube: "",
-    facebook: "",
-    instagram: "",
-    location: "",
-    language: "",
-  },
-  {
-    id: 3,
-    img: "/images/avatar.png",
-    category: "Daily life",
-    rating: 4.6,
-    name: "Nozima Musaboyeva",
-    telegram: "",
-    youtube: "",
-    facebook: "",
-    instagram: "",
-    location: "",
-    language: "",
-  },
-  {
-    id: 4,
-    img: "/images/avatar.png",
-    category: "Daily life",
-    rating: 4.6,
-    name: "Nozima Musaboyeva",
-    telegram: "",
-    youtube: "",
-    facebook: "",
-    instagram: "",
-    location: "",
-    language: "",
-  },
-  {
-    id: 5,
-    img: "/images/avatar.png",
-    category: "Daily life",
-    rating: 4.6,
-    name: "Nozima Musaboyeva",
-    telegram: "",
-    youtube: "",
-    facebook: "",
-    instagram: "",
-    location: "",
-    language: "",
-  },
-  {
-    id: 6,
-    img: "/images/avatar.png",
-    category: "Daily life",
-    rating: 4.6,
-    name: "Nozima Musaboyeva",
-    telegram: "",
-    youtube: "",
-    facebook: "",
-    instagram: "",
-    location: "",
-    language: "",
-  },
-];
-
-const TopRates = () => {
+const TopRates = ({ bloggersData }) => {
   const { push } = useRouter();
   return (
     <Container>
       <div className={styles.rates}>
         <h2>TOP RATES</h2>
         <Grid container spacing={{ xs: 2, sm: 3 }}>
-          {topRatesData.map((el) => (
+          {bloggersData?.map((el) => (
             <Grid item xs={12} sm={6} md={4} key={el.id}>
               <TopRatesCard
-                img={el.img}
-                category={el.category}
-                rating={el.rating}
-                name={el.name}
+                img={el.image}
+                category={el.categories?.[0].name}
+                rating={el.avg_rate}
+                name={el.full_name}
                 telegram={el.telegram}
                 youtube={el.youtube}
                 facebook={el.facebook}
                 instagram={el.instagram}
-                location={el.location}
-                language={el.language}
+                location={el.country}
+                language={el.languages
+                  .map((language) => language.short_form)
+                  .join(", ")}
               />
             </Grid>
           ))}

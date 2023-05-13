@@ -99,20 +99,6 @@ const Categories = () => {
               ))}
             </div>
           </Marquee>
-          <Marquee
-            className={styles.wrap__marquee}
-            loop={0}
-            pauseOnHover={true}
-            speed={40}
-            direction="right"
-            gradientWidth={20}
-          >
-            <div className={styles.marquee}>
-              {categoriesData.map((el, index) => (
-                <CategoriesCard icon={el.icon} text={el.text} key={index} />
-              ))}
-            </div>
-          </Marquee>
         </div>
       </div>
     </Container>

@@ -4,7 +4,12 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import styles from "./CCheckbox.module.scss";
 
-export default function CCheckbox({ checkboxOptions, checked, setChecked }) {
+export default function CCheckbox({
+  checkboxOptions,
+  checked,
+  setChecked,
+  count,
+}) {
   const handleChange1 = (isChecked) => {
     if (isChecked) return setChecked(checkboxOptions.map((el) => el.id));
     else setChecked([]);
@@ -25,19 +30,23 @@ export default function CCheckbox({ checkboxOptions, checked, setChecked }) {
       }}
     >
       {checkboxOptions?.map((item) => (
-        <FormControlLabel
-          label={item.name}
-          control={
-            <Checkbox
-              checked={checked.includes(item.id)}
-              onChange={(event) => handleChange2(event.target.checked, item.id)}
-              sx={{
-                color: "var(--text-color) !important",
-              }}
-            />
-          }
-          key={item.id}
-        />
+        <div key={item.id} className={styles.label}>
+          <FormControlLabel
+            label={item.name}
+            control={
+              <Checkbox
+                checked={checked.includes(item.id)}
+                onChange={(event) =>
+                  handleChange2(event.target.checked, item.id)
+                }
+                sx={{
+                  color: "var(--text-color) !important",
+                }}
+              />
+            }
+          />
+          <h2>{item[count]}</h2>
+        </div>
       ))}
     </Box>
   );

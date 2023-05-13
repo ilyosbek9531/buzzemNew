@@ -15,7 +15,13 @@ function CollapseLabel({ handleChange, filterBy }) {
   );
 }
 
-const CCollapse = ({ checkboxOptions, filterBy, checked, setChecked }) => {
+const CCollapse = ({
+  checkboxOptions,
+  filterBy,
+  checked,
+  setChecked,
+  count,
+}) => {
   const [collapse, setCollapse] = useState(false);
   const handleCollapse = () => {
     setCollapse((prev) => !prev);
@@ -29,6 +35,7 @@ const CCollapse = ({ checkboxOptions, filterBy, checked, setChecked }) => {
           checkboxOptions={checkboxOptions}
           checked={checked}
           setChecked={setChecked}
+          count={count}
         />
       </Collapse>
     </div>

@@ -1,16 +1,18 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import FilterBlogger from "components/UI/FilterBlogger/FilterBlogger";
 import BloggerCards from "components/UI/BloggerCards/BloggerCards";
-import { useState } from "react";
 import {
   UseGetBloggers,
   UseGetCategories,
   UseGetPlatforms,
+  UseGetRatingsCountRange,
 } from "services/blogger.service";
 import { useSelector } from "react-redux";
+import { useDebounce } from "utils/useDebounce";
+import CRating from "components/UI/Rating/Rating";
 
 const drawerWidth = 260;
 
@@ -44,19 +46,22 @@ export default function Blogger() {
   });
   const [gender, setGender] = useState("");
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
   const { data: bloggersFilter } = UseGetBloggers({
     queryParams: "",
   });
 
   const queryParams = Object.entries({
-    full_name: "",
+    full_name: debouncedSearchTerm,
     gender,
     age: "",
     language: "",
     country: select.location,
     category: checkedCategory.join(","),
     platform: checkedPlatform.join(","),
-    rating: "",
+    rating: checkedRating.join(","),
   })
     .filter(([key, value]) => value !== "")
     .map(
@@ -87,7 +92,21 @@ export default function Blogger() {
     queryParams: "",
   });
 
-  const ratingOptions = ["Useless", "Poor", "Ok", "Good", "Excelent"];
+  const { data: RatingCountRangeOption } = UseGetRatingsCountRange({
+    queryParams: "",
+  });
+
+  const ratingOptions = (options) => {
+    const optionArr = [];
+    for (let range in options) {
+      optionArr.push({
+        name: <CRating value={+range.split("_")?.[2] / 10} name="read-only" />,
+        id: `${+range.split("_")?.[2] / 10}`,
+        count: options[range],
+      });
+    }
+    return optionArr;
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -113,7 +132,7 @@ export default function Blogger() {
           setGender={setGender}
           gender={gender}
           CategoriesOption={CategoriesOption}
-          ratingOptions={ratingOptions}
+          ratingOptions={ratingOptions(RatingCountRangeOption)}
           checkedCategory={checkedCategory}
           checkedPlatform={checkedPlatform}
           checkedRating={checkedRating}
@@ -124,7 +143,11 @@ export default function Blogger() {
         />
       </Drawer>
       <Main open={open}>
-        <BloggerCards open={open} bloggers={bloggersData} />
+        <BloggerCards
+          open={open}
+          bloggers={bloggersData}
+          setSearchTerm={setSearchTerm}
+        />
       </Main>
     </Box>
   );

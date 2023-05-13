@@ -17,8 +17,10 @@
   }
 
   img {
-    width: rem(100);
-    height: rem(100);
+    min-width: rem(100);
+    max-width: rem(100);
+    min-height: rem(100);
+    max-height: rem(100);
     border-radius: 50%;
     object-fit: cover;
   }

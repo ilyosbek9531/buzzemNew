@@ -1,0 +1,77 @@
+@import "styles/unit.scss";
+
+.comments {
+  padding: rem(40) 0;
+  display: flex;
+  @include direction-column;
+  gap: rem(40);
+  color: var(--text-color);
+
+  h4 {
+    font-size: rem(28);
+    line-height: rem(35);
+    display: flex;
+    align-items: center;
+  }
+
+  &__card {
+    width: 75%;
+    padding: rem(20);
+    background: #ffffff;
+    box-shadow: rem(0) rem(2) rem(4) rgba(0, 0, 0, 0.075);
+    border-radius: rem(10);
+    margin: 0 auto;
+
+    &__top {
+      @include justify-content-between;
+
+      &__item {
+        @include align-items-center;
+        gap: rem(12);
+
+        input {
+          padding: rem(6) rem(12);
+          border: rem(1) solid #ced4da;
+          border-radius: rem(4);
+        }
+      }
+    }
+    &__center {
+      padding: rem(12);
+      border: rem(1) solid #ced4da;
+      border-radius: rem(4);
+      height: rem(100);
+      textarea {
+        height: 100%;
+        width: 100%;
+        resize: none;
+      }
+    }
+
+    &__buttons {
+      @include justify-content-between;
+      align-items: flex-end;
+
+      &__item {
+        @include align-items-center;
+        gap: rem(24);
+        button {
+          width: rem(91);
+          height: rem(31);
+        }
+      }
+    }
+  }
+
+  &__content {
+    @include direction-column;
+    gap: rem(16);
+  }
+
+  &__info {
+    width: 75%;
+    margin: 0 auto;
+    @include direction-column;
+    gap: rem(40);
+  }
+}
